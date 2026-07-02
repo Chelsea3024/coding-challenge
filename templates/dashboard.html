@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="auth-container dashboard-container">
+        <div class="avatar">
+            <i class="fas fa-user"></i>
+        </div>
+
+        <h1>Welcome!</h1>
+        <p class="subtitle">You are successfully logged in</p>
+
+        <div class="welcome-message">
+            <p>Hello, <strong>{{ nombre }}</strong> 👋</p>
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="btn-secondary">
+            <i class="fas fa-sign-out-alt"></i> LOGOUT
+        </a>
+
+        <div class="info-cards">
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <div class="number">15 min</div>
+                <p>Session timeout</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-shield-alt"></i>
+                <div class="number">✓</div>
+                <p>Secure session</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
